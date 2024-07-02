@@ -1,6 +1,8 @@
 package com.example.eployeeretentionpredection.controller;
 
 import com.example.eployeeretentionpredection.entity.Employee;
+import com.example.eployeeretentionpredection.pojo.DashboardPojo;
+import com.example.eployeeretentionpredection.projection.CountProjection;
 import com.example.eployeeretentionpredection.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -33,4 +35,12 @@ public class EmployeeController {
     public String predictById(@PathVariable int id) {
         return employeeService.predictById(id);
     }
+
+    @GetMapping("/dashboard")
+    public CountProjection getDashData(){
+        return employeeService.getEmployeeCount();
+    }
+
 }
+
+

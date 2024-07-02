@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {Dialog, DialogBackdrop, DialogPanel, DialogTitle} from '@headlessui/react'
 import {useForm} from "react-hook-form";
 import {useMutation, useQuery} from "@tanstack/react-query";
@@ -6,8 +6,10 @@ import {toast, ToastContainer} from "react-toastify";
 import Axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import {ExclamationTriangleIcon} from "@heroicons/react/16/solid";
+import {Context} from "./dashboard.tsx";
 
 const EmployeeList: React.FC = () => {
+    const {setReload}=useContext(Context)
     const [open, setOpen] = useState(false)
     const [pOpen, setPOpen] = useState(false)
     const [predictionText, setpredictionText] = useState("")
@@ -32,11 +34,14 @@ const EmployeeList: React.FC = () => {
 
 
     const submit = (data: any) => {
+        setReload(false);
         saveEmpApi.mutate(data, {
             onSuccess(res) {
                 notify()
                 setOpen(false)
                 getAllData.refetch()
+                setReload(true);
+
             }
         })
     }

@@ -1,6 +1,8 @@
 package com.example.eployeeretentionpredection.service;
 
 import com.example.eployeeretentionpredection.entity.Employee;
+import com.example.eployeeretentionpredection.pojo.DashboardPojo;
+import com.example.eployeeretentionpredection.projection.CountProjection;
 import com.example.eployeeretentionpredection.repo.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,10 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     private RandomForest randomForest;
+
+    public CountProjection getEmployeeCount(){
+        return employeeRepository.getEmployeeCount();
+    }
 
     public void loadTrainedModel() throws Exception {
         // Load the trained model
