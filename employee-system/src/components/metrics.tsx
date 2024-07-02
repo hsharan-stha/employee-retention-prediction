@@ -22,15 +22,15 @@ const Metrics: React.FC = () => {
             <h3 className="text-xl font-bold mb-3">Key Metrics</h3>
 
             <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white p-5 rounded shadow">
+                <div className="bg-red-50 p-5 rounded shadow">
                     <h4 className="text-lg font-semibold">Total Employees</h4>
                     <p className="text-2xl">{getDash?.data?.data?.empCount}</p>
                 </div>
-                <div className="bg-white p-5 rounded shadow">
+                <div className="bg-yellow-50 p-5 rounded shadow">
                     <h4 className="text-lg font-semibold">Retention Rate</h4>
                     <p className="text-2xl">{getDash?.data?.data?.retentionCount}%</p>
                 </div>
-                <div className="bg-white p-5 rounded shadow">
+                <div className="bg-blue-50 p-5 rounded shadow">
                     <h4 className="text-lg font-semibold">Average Satisfaction</h4>
                     <p className="text-2xl">{getDash?.data?.data?.jobSatisCount}%</p>
                 </div>
