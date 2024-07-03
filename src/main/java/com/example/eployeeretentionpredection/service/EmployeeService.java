@@ -31,7 +31,7 @@ public class EmployeeService {
 
     public void loadTrainedModel() throws Exception {
         // Load the trained model
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("random_forest_model.model"));
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("upload/random_forest_model.model"));
         randomForest = (RandomForest) ois.readObject();
         ois.close();
     }

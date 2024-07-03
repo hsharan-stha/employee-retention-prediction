@@ -22,7 +22,7 @@ public class TrainingService {
 
     public void trainModel() throws Exception {
         // Load the Excel file
-        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/data-source/employee_data.xlsx");
+        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/employee_data.xlsx");
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
 
@@ -87,16 +87,16 @@ public class TrainingService {
         rf.buildClassifier(dataSet);
 
         // Save the model
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("random_forest_model.model"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("upload/random_forest_model.model"))) {
             oos.writeObject(rf);
         }
     }
 
     public void trainModel(MultipartFile file) throws Exception {
-        Files.write(Path.of(System.getProperty("user.dir") + "/data-source/" + file.getOriginalFilename()), file.getBytes());
+        Files.write(Path.of(System.getProperty("user.dir") + "/upload/data-source/" + file.getOriginalFilename()), file.getBytes());
 
         // Load the Excel file
-        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/data-source/employee_data.xlsx");
+        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/employee_data.xlsx");
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
 
@@ -161,7 +161,7 @@ public class TrainingService {
         rf.buildClassifier(dataSet);
 
         // Save the model
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("random_forest_model.model"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("upload/random_forest_model.model"))) {
             oos.writeObject(rf);
         }
     }
