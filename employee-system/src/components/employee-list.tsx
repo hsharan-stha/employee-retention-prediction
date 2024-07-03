@@ -191,7 +191,7 @@ const EmployeeList: React.FC = () => {
 
                                                 <div>
                                                     <label className="block text-sm font-medium">Length of
-                                                        Service</label>
+                                                        Service (years)</label>
                                                     <input
                                                         type="number"
                                                         {...register("lengthOfService")}
@@ -203,7 +203,7 @@ const EmployeeList: React.FC = () => {
 
                                                 <div>
                                                     <label className="block text-sm font-medium">Promotions
-                                                        Received</label>
+                                                        Received (in count)</label>
                                                     <input
                                                         type="number"
                                                         {...register("promotionsReceived")}
@@ -228,9 +228,9 @@ const EmployeeList: React.FC = () => {
 
                                                 <div>
                                                     <label className="block text-sm font-medium">Working
-                                                        Environment</label>
+                                                        Environment (0 - 10)</label>
                                                     <input
-                                                        type="number"
+                                                        type="number" min={0} max={10}
                                                         {...register("workingEnvironment")}
                                                         className="mt-1 block w-full border border-gray-300 rounded-md p-2"
                                                         required
@@ -239,9 +239,9 @@ const EmployeeList: React.FC = () => {
 
                                                 <div>
                                                     <label className="block text-sm font-medium">Management
-                                                        Quality</label>
+                                                        Quality (0 - 10)</label>
                                                     <input
-                                                        type="number"
+                                                        type="number" min={0} max={10}
                                                         {...register("managementQuality")}
                                                         className="mt-1 block w-full border border-gray-300 rounded-md p-2"
                                                         required
@@ -250,9 +250,9 @@ const EmployeeList: React.FC = () => {
 
                                                 <div>
                                                     <label className="block text-sm font-medium">Job
-                                                        Satisfaction</label>
+                                                        Satisfaction (0 - 10)</label>
                                                     <input
-                                                        type="number"
+                                                        type="number" min={0} max={10}
                                                         {...register("jobSatisfaction")}
                                                         className="mt-1 block w-full border border-gray-300 rounded-md p-2"
                                                         required
@@ -261,9 +261,9 @@ const EmployeeList: React.FC = () => {
 
                                                 <div>
                                                     <label className="block text-sm font-medium">Personal Development
-                                                        Opportunities</label>
+                                                        Opportunities (0 - 10)</label>
                                                     <input
-                                                        type="number"
+                                                        type="number" min={0} max={10}
                                                         {...register("personalDevelopmentOpportunities")}
                                                         className="mt-1 block w-full border border-gray-300 rounded-md p-2"
                                                         required
