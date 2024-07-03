@@ -33,4 +33,4 @@ COPY --from=build /app/target/employee-retention-predection-0.0.1-SNAPSHOT.jar .
 EXPOSE 8089
 
 # Start the Java application with JVM options
-CMD ["java", "-Xmx2g", "-Xms1g", "-Djava.awt.headless=true", "-jar", "liberty-groom.jar"]
+CMD ["java", "-Xmx2g", "-Xms1g", "-Djava.awt.headless=true", "-jar", "employee-retention-predection-0.0.1-SNAPSHOT.jar"]
