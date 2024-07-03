@@ -7,6 +7,7 @@ import Axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import {ExclamationTriangleIcon} from "@heroicons/react/16/solid";
 import {Context} from "./dashboard.tsx";
+import { PiBrain } from "react-icons/pi";
 
 const EmployeeList: React.FC = () => {
     const {setReload}=useContext(Context)
@@ -60,25 +61,25 @@ const EmployeeList: React.FC = () => {
                         className="border px-4 py-1 rounded-md bg-blue-700 text-white "> Add Employee
                 </button>
             </div>
-            <div className="bg-white p-5 rounded shadow">
+            <div className="bg-white rounded-lg overflow-hidden border">
                 <table className="min-w-full bg-white">
                     <thead>
-                    <tr>
-                        <th className="py-2 px-4 border-b">Name</th>
-                        <th className="py-2 px-4 border-b">Age</th>
-                        <th className="py-2 px-4 border-b">Department</th>
-                        <th className="py-2 px-4 border-b">Job Title</th>
-                        <th className="py-2 px-4 border-b text-end">Action</th>
+                    <tr className={"bg-blue-100 border-b"}>
+                        <th className="py-3 px-4 ">Name</th>
+                        <th className="py-3 px-4 ">Age</th>
+                        <th className="py-3 px-4 ">Department</th>
+                        <th className="py-3 px-4 ">Job Title</th>
+                        <th className="py-3 px-4  text-end">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     {getAllData?.data?.data?.map(r => (
-                        <tr key={r?.id}>
-                            <td className="py-2 px-4 border-b">{r?.fullName}</td>
-                            <td className="py-2 px-4 border-b">{r?.age}</td>
-                            <td className="py-2 px-4 border-b">{r?.department}</td>
-                            <td className="py-2 px-4 border-b">{r?.jobTitle}</td>
-                            <td className="text-end">
+                        <tr key={r?.id} className={"border-b last:border-b-0"}>
+                            <td className="py-3 px-4 ">{r?.fullName}</td>
+                            <td className="py-3 px-4 ">{r?.age}</td>
+                            <td className="py-3 px-4 ">{r?.department}</td>
+                            <td className="py-3 px-4 ">{r?.jobTitle}</td>
+                            <td className="py-3 px-4 flex justify-end">
                                 <button onClick={()=>{
                                     apiToPredict.mutate(r?.id,{
                                         onSuccess(res){
@@ -87,8 +88,7 @@ const EmployeeList: React.FC = () => {
                                             setPOpen(true)
                                         }
                                     })
-                                }} className="border px-4 py-1 rounded-md bg-green-700 text-white">Predict
-                                    Retention
+                                }} className="border flex items-center gap-2 px-4 py-1 rounded-md bg-green-700 text-white"><PiBrain />Predict
                                 </button>
                             </td>
                         </tr>

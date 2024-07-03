@@ -86,40 +86,42 @@ function Check() {
     return (
         <div className="flex">
             <Sidebar active={'check'}/>
-            <div className="w-3/4 p-5">
+            <div className="w-3/4 p-5 h-[100vh] flex flex-col">
+                <div className={""}>
+                    <div className=" mb-5">
+                        <h3 className="text-xl font-bold mb-3">Train Data</h3>
 
-                <div className="mb-5">
-                    <h3 className="text-xl font-bold mb-3">Train Data</h3>
-
-                    <div
-                        className={`border-4 border-dashed rounded-lg p-6 text-center ${isDragging ? 'border-blue-500' : 'border-gray-300'}`}
-                        onDragOver={handleDragOver}
-                        onDragLeave={handleDragLeave}
-                        onDrop={handleDrop}
-                    >
-                        <input
-                            type="file"
-                            id="file-upload"
-                            className="hidden"
-                            onChange={handleChange}
-                        />
-                        <label
-                            htmlFor="file-upload"
-                            className="block text-xl text-gray-700 cursor-pointer"
+                        <div
+                            className={`border-4 border-dashed rounded-lg p-6 text-center ${isDragging ? 'border-blue-500' : 'border-gray-300'}`}
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={handleDrop}
                         >
-                            Drag and drop your training data here or{' '}
-                            <span className="text-blue-500 underline">browse</span>
-                        </label>
-                        <p className="mt-2 text-sm text-gray-500">Supported formats: .xlsx</p>
+                            <input
+                                type="file"
+                                id="file-upload"
+                                className="hidden"
+                                onChange={handleChange}
+                            />
+                            <label
+                                htmlFor="file-upload"
+                                className="block text-xl text-gray-700 cursor-pointer"
+                            >
+                                Drag and drop your training data here or{' '}
+                                <span className="text-blue-500 underline">browse</span>
+                            </label>
+                            <p className="mt-2 text-sm text-gray-500">Supported formats: .xlsx</p>
+                        </div>
                     </div>
                 </div>
 
+
                 {data.length > 0 && (
-                    <div>
+                    <div className={"relative grow overflow-y-scroll"}>
                         <button onClick={proceedTraining}
                                 className="border px-4 py-1 rounded-md bg-blue-700 text-white">Proceed Training
                         </button>
-                        <div className="overflow-x-auto">
+                        <div className="absoulute">
                             <table className="min-w-full bg-white border border-gray-300 rounded-lg">
                                 <thead>
                                 <tr>
