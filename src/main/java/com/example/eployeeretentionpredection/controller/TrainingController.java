@@ -22,6 +22,27 @@ public class TrainingController {
             return "Failed to train model: " + e.getMessage();
         }
     }
+    @PostMapping("/train-by-file-lr")
+    public String trainModelByFileLr(@ModelAttribute FilePojo file) {
+        try {
+            trainRandomForestModel.trainLogisticModel(file.getFile());
+            return "Model trained and saved successfully!";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed to train model: " + e.getMessage();
+        }
+    }
+
+    @PostMapping("/train-by-file-svm")
+    public String trainModelByFileSvm(@ModelAttribute FilePojo file) {
+        try {
+            trainRandomForestModel.trainSVMModel(file.getFile());
+            return "Model trained and saved successfully!";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Failed to train model: " + e.getMessage();
+        }
+    }
 
     @GetMapping("/train")
     public String trainModel() {

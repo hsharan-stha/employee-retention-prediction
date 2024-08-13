@@ -30,6 +30,14 @@ public class Employee {
     private int managementQuality;
     private int jobSatisfaction;
     private int personalDevelopmentOpportunities;
+//    private int motivation;
+//    private int careerDevelopment;
+//    private int workLifeBalance;
+//    private int performanceManagement;
+//    private int performanceOpportunities;
+//    private int jobSecurity;
+//    private int flexibility;
+//    private int stressAtWork;
     private String leftReason;
     private boolean likelyToLeave;
     private double likelyToLeavePer;
