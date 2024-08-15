@@ -40,6 +40,11 @@ public class EmployeeController {
         return employeeService.predictByIdSvm(id);
     }
 
+    @GetMapping("/predict-lr/{id}")
+    public String predictByIdLr(@PathVariable int id) {
+        return employeeService.predictByIdLr(id);
+    }
+
     @GetMapping("/dashboard")
     public CountProjection getDashData(){
         return employeeService.getEmployeeCount();

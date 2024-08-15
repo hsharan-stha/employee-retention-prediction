@@ -25,7 +25,7 @@ public class TrainingService {
 
     public void trainModel() throws Exception {
         // Load the Excel file
-        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/employee_data.xlsx");
+        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/ml_training_testing_data.xlsx");
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
 
@@ -99,7 +99,7 @@ public class TrainingService {
         Files.write(Path.of(System.getProperty("user.dir") + "/upload/data-source/" + file.getOriginalFilename()), file.getBytes());
 
         // Load the Excel file
-        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/employee_data.xlsx");
+        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/ml_training_testing_data.xlsx");
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
 
@@ -127,6 +127,14 @@ public class TrainingService {
         attributes.add(new Attribute("managementQuality"));
         attributes.add(new Attribute("jobSatisfaction"));
         attributes.add(new Attribute("personalDevelopmentOpportunities"));
+        attributes.add(new Attribute("motivation"));
+        attributes.add(new Attribute("careerDevelopment"));
+        attributes.add(new Attribute("workLifeBalance"));
+        attributes.add(new Attribute("performanceManagement"));
+        attributes.add(new Attribute("performanceOpportunities"));
+        attributes.add(new Attribute("jobSecurity"));
+        attributes.add(new Attribute("flexibility"));
+        attributes.add(new Attribute("stressAtWork"));
         attributes.add(new Attribute("leftReason", List.of("personal", "job_related", "management", "other")));
         attributes.add(new Attribute("likelyToLeave", List.of("yes", "no")));
 
@@ -151,8 +159,16 @@ public class TrainingService {
             instance.setValue(attributes.get(9), row.getCell(9).getNumericCellValue());
             instance.setValue(attributes.get(10), row.getCell(10).getNumericCellValue());
             instance.setValue(attributes.get(11), row.getCell(11).getNumericCellValue());
-            instance.setValue(attributes.get(12), row.getCell(12).getStringCellValue());
-            instance.setValue(attributes.get(13), row.getCell(13).getStringCellValue());
+            instance.setValue(attributes.get(12), row.getCell(12).getNumericCellValue());
+            instance.setValue(attributes.get(13), row.getCell(13).getNumericCellValue());
+            instance.setValue(attributes.get(14), row.getCell(14).getNumericCellValue());
+            instance.setValue(attributes.get(15), row.getCell(15).getNumericCellValue());
+            instance.setValue(attributes.get(16), row.getCell(16).getNumericCellValue());
+            instance.setValue(attributes.get(17), row.getCell(17).getNumericCellValue());
+            instance.setValue(attributes.get(18), row.getCell(18).getNumericCellValue());
+            instance.setValue(attributes.get(19), row.getCell(19).getNumericCellValue());
+            instance.setValue(attributes.get(20), row.getCell(20).getStringCellValue());
+            instance.setValue(attributes.get(21), row.getCell(21).getStringCellValue());
 
             dataSet.add(instance);
         }
@@ -205,7 +221,7 @@ public class TrainingService {
         Files.write(Path.of(System.getProperty("user.dir") + "/upload/data-source/" + file.getOriginalFilename()), file.getBytes());
 
         // Load the Excel file
-        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/employee_data.xlsx");
+        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/ml_training_testing_data.xlsx");
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
 
@@ -233,6 +249,14 @@ public class TrainingService {
         attributes.add(new Attribute("managementQuality"));
         attributes.add(new Attribute("jobSatisfaction"));
         attributes.add(new Attribute("personalDevelopmentOpportunities"));
+        attributes.add(new Attribute("motivation"));
+        attributes.add(new Attribute("careerDevelopment"));
+        attributes.add(new Attribute("workLifeBalance"));
+        attributes.add(new Attribute("performanceManagement"));
+        attributes.add(new Attribute("performanceOpportunities"));
+        attributes.add(new Attribute("jobSecurity"));
+        attributes.add(new Attribute("flexibility"));
+        attributes.add(new Attribute("stressAtWork"));
         attributes.add(new Attribute("leftReason", List.of("personal", "job_related", "management", "other")));
         attributes.add(new Attribute("likelyToLeave", List.of("yes", "no")));
 
@@ -257,8 +281,16 @@ public class TrainingService {
             instance.setValue(attributes.get(9), row.getCell(9).getNumericCellValue());
             instance.setValue(attributes.get(10), row.getCell(10).getNumericCellValue());
             instance.setValue(attributes.get(11), row.getCell(11).getNumericCellValue());
-            instance.setValue(attributes.get(12), row.getCell(12).getStringCellValue());
-            instance.setValue(attributes.get(13), row.getCell(13).getStringCellValue());
+            instance.setValue(attributes.get(12), row.getCell(12).getNumericCellValue());
+            instance.setValue(attributes.get(13), row.getCell(13).getNumericCellValue());
+            instance.setValue(attributes.get(14), row.getCell(14).getNumericCellValue());
+            instance.setValue(attributes.get(15), row.getCell(15).getNumericCellValue());
+            instance.setValue(attributes.get(16), row.getCell(16).getNumericCellValue());
+            instance.setValue(attributes.get(17), row.getCell(17).getNumericCellValue());
+            instance.setValue(attributes.get(18), row.getCell(18).getNumericCellValue());
+            instance.setValue(attributes.get(19), row.getCell(19).getNumericCellValue());
+            instance.setValue(attributes.get(20), row.getCell(20).getStringCellValue());
+            instance.setValue(attributes.get(21), row.getCell(21).getStringCellValue());
 
             dataSet.add(instance);
         }
@@ -311,7 +343,7 @@ public class TrainingService {
         Files.write(Path.of(System.getProperty("user.dir") + "/upload/data-source/" + file.getOriginalFilename()), file.getBytes());
 
         // Load the Excel file
-        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/employee_data.xlsx");
+        FileInputStream excelFile = new FileInputStream(System.getProperty("user.dir") + "/upload/data-source/ml_training_testing_data.xlsx");
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
 
@@ -339,6 +371,14 @@ public class TrainingService {
         attributes.add(new Attribute("managementQuality"));
         attributes.add(new Attribute("jobSatisfaction"));
         attributes.add(new Attribute("personalDevelopmentOpportunities"));
+        attributes.add(new Attribute("motivation"));
+        attributes.add(new Attribute("careerDevelopment"));
+        attributes.add(new Attribute("workLifeBalance"));
+        attributes.add(new Attribute("performanceManagement"));
+        attributes.add(new Attribute("performanceOpportunities"));
+        attributes.add(new Attribute("jobSecurity"));
+        attributes.add(new Attribute("flexibility"));
+        attributes.add(new Attribute("stressAtWork"));
         attributes.add(new Attribute("leftReason", List.of("personal", "job_related", "management", "other")));
         attributes.add(new Attribute("likelyToLeave", List.of("yes", "no")));
 
@@ -363,8 +403,16 @@ public class TrainingService {
             instance.setValue(attributes.get(9), row.getCell(9).getNumericCellValue());
             instance.setValue(attributes.get(10), row.getCell(10).getNumericCellValue());
             instance.setValue(attributes.get(11), row.getCell(11).getNumericCellValue());
-            instance.setValue(attributes.get(12), row.getCell(12).getStringCellValue());
-            instance.setValue(attributes.get(13), row.getCell(13).getStringCellValue());
+            instance.setValue(attributes.get(12), row.getCell(12).getNumericCellValue());
+            instance.setValue(attributes.get(13), row.getCell(13).getNumericCellValue());
+            instance.setValue(attributes.get(14), row.getCell(14).getNumericCellValue());
+            instance.setValue(attributes.get(15), row.getCell(15).getNumericCellValue());
+            instance.setValue(attributes.get(16), row.getCell(16).getNumericCellValue());
+            instance.setValue(attributes.get(17), row.getCell(17).getNumericCellValue());
+            instance.setValue(attributes.get(18), row.getCell(18).getNumericCellValue());
+            instance.setValue(attributes.get(19), row.getCell(19).getNumericCellValue());
+            instance.setValue(attributes.get(20), row.getCell(20).getStringCellValue());
+            instance.setValue(attributes.get(21), row.getCell(21).getStringCellValue());
 
             dataSet.add(instance);
         }
